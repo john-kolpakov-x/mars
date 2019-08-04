@@ -10,4 +10,11 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
   providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+  //compile 'postgresql:postgresql:9.1-901-1.jdbc4'
+  compile 'org.postgresql:postgresql:42.2.6'
+  compile 'com.zaxxer:HikariCP:3.3.1'
+
+  testCompile 'kz.greetgo:greetgo.util:2.0.0'
+
 }
