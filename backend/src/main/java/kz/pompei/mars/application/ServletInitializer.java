@@ -1,4 +1,4 @@
-package kz.pompei.mars.mars;
+package kz.pompei.mars.application;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

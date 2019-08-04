@@ -1,0 +1,17 @@
+allprojects {
+
+  apply plugin: 'java'
+  apply plugin: 'maven'
+
+  group = 'kz.pompei.mars'
+  version = '0.0.1'
+
+  sourceCompatibility = '11'
+  targetCompatibility = '11'
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+}

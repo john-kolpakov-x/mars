@@ -1,4 +1,4 @@
-package kz.pompei.mars.mars;
+package kz.pompei.mars.application;
 
 import kz.pompei.mars.controller.ImporterController;
 import kz.pompei.mars.registers.impl.ImporterRegister;
