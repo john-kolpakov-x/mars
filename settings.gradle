@@ -1,3 +1,4 @@
 rootProject.name = 'mars'
 
 include "backend"
+include "client"
