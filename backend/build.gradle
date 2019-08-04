@@ -11,6 +11,8 @@ dependencies {
   providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+  providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
+
   //compile 'postgresql:postgresql:9.1-901-1.jdbc4'
   compile 'org.postgresql:postgresql:42.2.6'
   compile 'com.zaxxer:HikariCP:3.3.1'
@@ -18,4 +20,17 @@ dependencies {
   testCompile 'kz.greetgo:greetgo.util:2.0.0'
   compile 'org.liquibase:liquibase-core:3.7.0'
 
+}
+
+evaluationDependsOn(':client')
+
+task buildClient {
+  dependsOn project(":client").tasks.buildClient
+}
+
+war {
+  dependsOn buildClient
+  enabled = true
+
+  from project(":client").projectDir.toPath().resolve("dist").resolve("client")
 }
