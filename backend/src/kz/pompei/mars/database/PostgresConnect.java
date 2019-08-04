@@ -2,6 +2,7 @@ package kz.pompei.mars.database;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import kz.pompei.mars.util.EnvUtil;
 import liquibase.Liquibase;
 import liquibase.database.Database;
 import liquibase.database.DatabaseFactory;
@@ -22,15 +23,15 @@ public class PostgresConnect {
   private HikariDataSource dataSource;
 
   private String getUrl() {
-    return "jdbc:postgresql://localhost:5432/mars";
+    return EnvUtil.env("MARS_POSTGRES_URL", "jdbc:postgresql://localhost:5432/mars");
   }
 
   private String getUsername() {
-    return "i_use_mars";
+    return EnvUtil.env("MARS_POSTGRES_USERNAME", "i_use_mars");
   }
 
   private String getPassword() {
-    return "111";
+    return EnvUtil.env("MARS_POSTGRES_PASSWORD", "111");
   }
 
   @PostConstruct
