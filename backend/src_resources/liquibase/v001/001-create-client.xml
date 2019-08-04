@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+  <changeSet author="pompei" id="01">
+    <sql endDelimiter=";;" splitStatements="true"> <![CDATA[
+
+      create table client (
+        id varchar(32) primary key,
+        fio varchar(300),
+        client_group varchar(100)
+      )
+
+    ]]></sql>
+  </changeSet>
+
+  <changeSet author="pompei" id="02">
+    <sql endDelimiter=";;" splitStatements="true"> <![CDATA[
+
+      create table phone (
+        id varchar(32) primary key,
+        phone_number varchar(300),
+        client_id varchar(32) references client
+      )
+
+    ]]></sql>
+  </changeSet>
+
+</databaseChangeLog>
