@@ -18,6 +18,9 @@ import java.util.Map;
 public class MarsApplication implements ApplicationListener {
 
   public static void main(String[] args) {
+
+    System.out.println(new Wow().toString());
+
     SpringApplication.run(MarsApplication.class, args);
   }
 
