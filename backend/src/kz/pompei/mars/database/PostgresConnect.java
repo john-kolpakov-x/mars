@@ -23,7 +23,7 @@ public class PostgresConnect {
   private HikariDataSource dataSource;
 
   private String getUrl() {
-    return EnvUtil.env("MARS_POSTGRES_URL", "jdbc:postgresql://localhost:5432/mars");
+    return EnvUtil.env("MARS_POSTGRES_URL", "jdbc:postgresql://localhost:7011/mars");
   }
 
   private String getUsername() {

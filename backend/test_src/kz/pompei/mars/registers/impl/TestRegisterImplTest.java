@@ -50,7 +50,7 @@ public class TestRegisterImplTest extends AbstractTestNGSpringContextTests {
   }
 
   @Autowired
-  TestRegister testRegister;
+  private TestRegister testRegister;
 
   @Test
   public void clientList() throws Exception {
@@ -76,4 +76,5 @@ public class TestRegisterImplTest extends AbstractTestNGSpringContextTests {
     assertThat(actualList.get(2).fio).isEqualTo(clientRecords.get(2).fio);
 
   }
+
 }

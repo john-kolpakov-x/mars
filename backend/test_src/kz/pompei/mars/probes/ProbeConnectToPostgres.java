@@ -12,7 +12,7 @@ public class ProbeConnectToPostgres {
     Class.forName("org.postgresql.Driver");
 
     try (Connection conn = DriverManager.getConnection(
-      "jdbc:postgresql://localhost:5432/mars", "i_use_mars", "111"
+      "jdbc:postgresql://localhost:7011/mars", "i_use_mars", "111"
     )) {
 
       System.out.println("conn = " + conn);

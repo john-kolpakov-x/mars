@@ -13,7 +13,7 @@ public class ProbePoolToPostgres {
 
     HikariConfig config = new HikariConfig();
 
-    config.setJdbcUrl("jdbc:postgresql://localhost:5432/mars");
+    config.setJdbcUrl("jdbc:postgresql://localhost:7011/mars");
     config.setUsername("i_use_mars");
     config.setPassword("111");
 
