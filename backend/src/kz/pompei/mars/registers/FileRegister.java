@@ -6,10 +6,16 @@ import java.io.InputStream;
 
 public interface FileRegister {
 
-  String uploadFile(String fileId, String fileName, String mimeType, int portionSize, InputStream inputStream);
+  void uploadFile(String fileId, String fileName, String mimeType, int portionSize, InputStream inputStream) throws Exception;
 
-  FileMeta loadFileMeta(String fileId);
+  default FileMeta loadFileMeta(String fileId) throws Exception {
+    FileMeta fileMeta = loadFileMetaOrNull(fileId);
+    if (fileMeta == null) throw new RuntimeException("No file with id = " + fileId);
+    return fileMeta;
+  }
 
-  byte[] downloadFilePart(String fileId, long offset, long partSize);
+  FileMeta loadFileMetaOrNull(String fileId) throws Exception;
+
+  byte[] downloadFilePart(String fileId, long offset, int partSize) throws Exception;
 
 }

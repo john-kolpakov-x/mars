@@ -27,7 +27,9 @@
         id            varchar(32) references file_meta,
         portion_index bigint,
 
-        content       byteA not null,
+        content       byteA  not null,
+
+        content_size  int    not null,
 
         primary key(id, portion_index)
       )
