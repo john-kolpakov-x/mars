@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/test")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TestController {
 
   @Autowired

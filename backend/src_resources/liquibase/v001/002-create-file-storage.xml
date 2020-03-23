@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+  <changeSet author="pompei" id="create-table-file_meta">
+    <sql endDelimiter=";;" splitStatements="true"> <![CDATA[
+
+      create table file_meta (
+        id            varchar(32) primary key,
+        actual        boolean,
+        file_name     varchar(300),
+        mime_type     varchar(100) not null,
+        file_size     bigint,
+        portion_size  int not null
+      )
+
+    ]]></sql>
+  </changeSet>
+
+  <changeSet author="pompei" id="create-table-file_portion">
+    <sql endDelimiter=";;" splitStatements="true"> <![CDATA[
+
+      create table file_portion (
+        id            varchar(32) references file_meta,
+        portion_index bigint,
+
+        content       byteA not null,
+
+        primary key(id, portion_index)
+      )
+
+    ]]></sql>
+  </changeSet>
+
+</databaseChangeLog>

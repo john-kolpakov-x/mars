@@ -1,13 +1,11 @@
 package kz.pompei.mars.registers.impl;
 
 import kz.greetgo.util.RND;
-import kz.pompei.mars.application.ImporterAll;
 import kz.pompei.mars.database.PostgresConnect;
 import kz.pompei.mars.model.ClientRecord;
 import kz.pompei.mars.registers.TestRegister;
+import kz.pompei.mars.util.ParentTestNg;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
 import java.sql.Connection;
@@ -18,8 +16,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ContextConfiguration(classes = ImporterAll.class)
-public class TestRegisterImplTest extends AbstractTestNGSpringContextTests {
+public class TestRegisterImplTest extends ParentTestNg {
 
   @Autowired
   private PostgresConnect postgresConnect;

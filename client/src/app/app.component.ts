@@ -17,13 +17,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("asd ", this.env.serverPrefix + "/test/client-list");
+    console.log('asd ', this.env.serverPrefix + '/test/client-list');
 
-    this.http.get<ClientRecord[]>(this.env.serverPrefix + "/test/client-list").subscribe({
+    this.http.get<ClientRecord[]>(this.env.serverPrefix + '/test/client-list').subscribe({
       next: (list: ClientRecord[]) => {
         this.recordList = list;
       }
-    })
+    });
 
   }
 

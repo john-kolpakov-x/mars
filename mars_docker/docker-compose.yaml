@@ -11,3 +11,10 @@ services:
       POSTGRES_DB: mars
       POSTGRES_USER: i_use_mars
       POSTGRES_PASSWORD: 111
+
+  nginx:
+    image: nginx:1.17.9
+    ports:
+      - "8080:80"
+    volumes:
+      - "./site.template.html/:/usr/share/nginx/html"
