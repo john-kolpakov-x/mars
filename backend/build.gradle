@@ -1,5 +1,5 @@
 plugins {
-  id 'org.springframework.boot' version '2.1.6.RELEASE'
+  id 'org.springframework.boot' version '2.2.5.RELEASE'
   id 'java'
   id 'war'
 }
@@ -7,6 +7,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 dependencies {
+
   implementation 'org.springframework.boot:spring-boot-starter-web'
   providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -16,12 +17,13 @@ dependencies {
   compile project(":mars.processor")
   annotationProcessor project(":mars.processor")
 
-  //compile 'postgresql:postgresql:9.1-901-1.jdbc4'
   compile 'org.postgresql:postgresql:42.2.6'
   compile 'com.zaxxer:HikariCP:3.3.1'
 
   testCompile 'kz.greetgo:greetgo.util:2.0.0'
   compile 'org.liquibase:liquibase-core:3.7.0'
+
+  compile "org.springframework.boot:spring-boot-starter-security"
 
 }
 
