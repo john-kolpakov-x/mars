@@ -14,16 +14,16 @@ dependencies {
 
   providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
 
-  compile project(":mars.processor")
+  implementation project(":mars.processor")
   annotationProcessor project(":mars.processor")
 
-  compile 'org.postgresql:postgresql:42.2.6'
-  compile 'com.zaxxer:HikariCP:3.3.1'
+  implementation 'org.postgresql:postgresql:42.2.6'
+  implementation 'com.zaxxer:HikariCP:3.3.1'
 
-  testCompile 'kz.greetgo:greetgo.util:2.0.0'
-  compile 'org.liquibase:liquibase-core:3.7.0'
+  testImplementation 'kz.greetgo:greetgo.util:2.0.0'
+  implementation 'org.liquibase:liquibase-core:3.7.0'
 
-  compile "org.springframework.boot:spring-boot-starter-security"
+  implementation "org.springframework.boot:spring-boot-starter-security"
 
 }
 
